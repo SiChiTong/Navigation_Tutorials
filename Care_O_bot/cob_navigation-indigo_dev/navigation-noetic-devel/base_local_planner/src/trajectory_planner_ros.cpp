@@ -138,7 +138,7 @@ namespace base_local_planner {
         ROS_ERROR("You are using acc_limit_y where you should be using acc_lim_y. Please change your configuration files appropriately. The documentation used to be wrong on this, sorry for any confusion.");
 
       if(private_nh.hasParam("acc_limit_th"))
-        ROS_ERROR("You are using acc_limit_th where you should be using acc_lim_th. Please change your configuration files appropriately. The documentation used to be wrong on this, sorry for any confusion.");
+        ROS_ERROR("You are using acc_limit_th where you should be using acc_lim_theta. Please change your configuration files appropriately. The documentation used to be wrong on this, sorry for any confusion.");
 
       //Assuming this planner is being run within the navigation stack, we can
       //just do an upward search for the frequency at which its being run. This
@@ -218,7 +218,7 @@ namespace base_local_planner {
 
       min_in_place_vel_th_ = nav_core::loadParameterWithDeprecation(private_nh,
                                                                     "min_in_place_vel_theta",
-                                                                    "min_in_place_rotational_vel", 0.4);
+                                                                    "min_in_place_vel_theta", 0.4);
       reached_goal_ = false;
       backup_vel = -0.1;
       if(private_nh.getParam("backup_vel", backup_vel))
