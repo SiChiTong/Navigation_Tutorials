@@ -1,0 +1,13 @@
+#!/bin/bash
+SCRIPT=$(readlink -f $0)
+SCRIPTPATH=$(dirname $SCRIPT)
+
+#detect ipython version
+if command -v ipython 1>/dev/null; then PYTHON_EXECUTABLE=ipython
+elif command -v ipython3 1>/dev/null; then PYTHON_EXECUTABLE=ipython3
+elif command -v ipython2 1>/dev/null; then PYTHON_EXECUTABLE=ipython2
+else PYTHON_EXECUTABLE=python
+fi
+
+# run cob_console
+$PYTHON_EXECUTABLE -i "$SCRIPTPATH/cob_console_node"

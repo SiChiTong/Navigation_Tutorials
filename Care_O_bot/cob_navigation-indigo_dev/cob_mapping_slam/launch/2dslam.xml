@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="unified_laser_scan" default="false"/>
+  <arg name="unified_laser_scan" default="true"/>
 
   <!-- dynamic map generation from unified scan -->
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
