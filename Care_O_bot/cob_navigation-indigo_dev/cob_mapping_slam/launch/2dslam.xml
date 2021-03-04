@@ -11,7 +11,8 @@
     <param name="ymin" type="int" value="-8"/>
     <param name="xmax" type="int" value="8"/>
     <param name="ymax" type="int" value="8"/>
-    <param name="odom_frame" type="string" value="odom_combined"/>
+    <!-- <param name="odom_frame" type="string" value="odom_combined"/> -->
+    <param name="odom_frame" type="string" value="base_footprint"/>
   </node>
 
 </launch>
