@@ -1,0 +1,26 @@
+language: generic
+services:
+  - docker
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+env:
+  global:
+    - ADDITIONAL_DEBS='apt-utils curl dialog wget'
+    - CATKIN_LINT=pedantic
+    - CATKIN_LINT_ARGS='--ignore description_boilerplate --ignore wrong_bin_install_destination'
+    - CMAKE_ARGS=-DCMAKE_BUILD_TYPE=Release
+    - PYLINT_ARGS="--output-format=parseable --errors-only --ignored-modules=catkin_pkg"
+    - PYLINT_CHECK=true
+    - ROS_REPO=main
+    - UPSTREAM_WORKSPACE=file
+  matrix:
+    - ROS_DISTRO=kinetic AFTER_SETUP_TARGET_WORKSPACE='wget -O - https://raw.githubusercontent.com/mojin-robotics/realsense/realsense_substitute/realsense_camera/patch/patch_docker.sh | bash'
+    - ROS_DISTRO=melodic
+    - ROS_DISTRO=noetic TARGET_WORKSPACE='. -cob_robots/cob_bringup -cob_robots/cob_robots'
+install:
+  - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
+script:
+  - .industrial_ci/travis.sh

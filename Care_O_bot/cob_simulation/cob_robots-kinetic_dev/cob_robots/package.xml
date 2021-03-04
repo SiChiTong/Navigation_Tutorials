@@ -1,0 +1,24 @@
+<package format="2">
+  <name>cob_robots</name>
+  <version>0.7.5</version>
+  <description>This stack holds packages for hardware configuration as well as launch files for starting up the basic layer for operating Care-O-bot.</description>
+
+  <license>Apache 2.0</license>
+
+  <url type="website">http://ros.org/wiki/cob_robots</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <maintainer email="felixmessmer@gmail.com">Felix Messmer</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>cob_bringup</exec_depend>
+  <exec_depend>cob_default_robot_behavior</exec_depend>
+  <exec_depend>cob_default_robot_config</exec_depend>
+  <exec_depend>cob_hardware_config</exec_depend>
+  <exec_depend>cob_moveit_config</exec_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

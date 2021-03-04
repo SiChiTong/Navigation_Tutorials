@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+
+	<!-- Monitor Wifi/ddwrt -->
+	<node pkg="cob_monitoring" name="ddwrt_diag" type="wifi_monitor.py"/>
+	<node pkg="cob_monitoring" name="wifi_ddwrt" type="ddwrt.py">
+		<param name="router_ip" type="string" value="$(arg robot)"/>
+		<param name="router" type="string" value="$(arg robot)"/>
+		<param name="username" type="string" value="root"/>
+		<param name="password" type="string" value="admin"/>
+	</node>
+
+</launch>
