@@ -134,52 +134,64 @@ void TeleopKeyboard::keyboardLoop()
       // Walking
     case KEYCODE_W:
       cmd.linear.x = walk_vel;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_W");
       dirty = true;
       break;
     case KEYCODE_S:
       cmd.linear.x = - walk_vel;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_S");
       dirty = true;
       break;
     case KEYCODE_A:
       cmd.linear.y = walk_vel;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_A");
       dirty = true;
       break;
     case KEYCODE_D:
       cmd.linear.y = - walk_vel;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_D");
       dirty = true;
       break;
     case KEYCODE_Q:
       cmd.angular.z = yaw_rate;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_Q");
       dirty = true;
       break;
     case KEYCODE_E:
       cmd.angular.z = - yaw_rate;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_E");
       dirty = true;
       break;
 
       // Running
     case KEYCODE_W_CAP:
       cmd.linear.x = run_vel;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_W_CAP");
       dirty = true;
       break;
     case KEYCODE_S_CAP:
       cmd.linear.x = - run_vel;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_S_CAP");
       dirty = true;
       break;
     case KEYCODE_A_CAP:
       cmd.linear.y = run_vel;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_A_CAP");
       dirty = true;
       break;
     case KEYCODE_D_CAP:
       cmd.linear.y = - run_vel;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_D_CAP");
       dirty = true;
       break;
     case KEYCODE_Q_CAP:
       cmd.angular.z = yaw_rate_run;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_Q_CAP");
       dirty = true;
       break;
     case KEYCODE_E_CAP:
       cmd.angular.z = - yaw_rate_run;
+      ROS_INFO("cob_teleop_keyboard.cpp - KEYCODE_E_CAP");
       dirty = true;
       break;
     }

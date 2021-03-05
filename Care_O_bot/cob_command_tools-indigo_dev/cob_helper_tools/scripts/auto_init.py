@@ -28,7 +28,7 @@ class AutoInit():
   def __init__(self):
     self.components = rospy.get_param('~components', {})
     self.max_retries = rospy.get_param('~max_retries', 50)
-    self.em_state = 1  # assume EMSTOP
+    self.em_state = 0  # assume EMSTOP
     rospy.Subscriber("/emergency_stop_state", EmergencyStopState, self.em_cb, queue_size=1)
 
     # wait for all components to start
