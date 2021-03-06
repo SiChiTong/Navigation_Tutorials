@@ -20,6 +20,8 @@
     <arg name="stacks" value="$(arg stacks)"/>
     <arg name="3d_sensor" value="$(arg 3d_sensor)"/>
   </include>
+  <!-- <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch">
+  </include> -->
   
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
     <param name="publish_frequency" type="double" value="30.0" />
